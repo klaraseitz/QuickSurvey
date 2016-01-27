@@ -15,6 +15,7 @@ import android.widget.CheckBox;
 import android.widget.EditText;
 import android.widget.ListView;
 
+import java.util.ArrayList;
 import java.util.List;
 
 
@@ -41,12 +42,31 @@ public class MainActivity extends AppCompatActivity {
 
     private void showAllListEntries () {
         List<SurveyObject> surveyObjectList = dataSource.getAllSurveyObjects();
+        int occurences[] = new int[4];
+        for(int i = 0; i < surveyObjectList.size(); i++){
+            if(surveyObjectList.get(i).toString().equals("nichts gewusst")){
+                occurences[0]++;
+            }else if(surveyObjectList.get(i).toString().equals("nur Modell bekannt")){
+                occurences[1]++;
+            }else if(surveyObjectList.get(i).toString().equals("nur Microskopbild bekannt")){
+                occurences[2]++;
+            }else{
+                occurences[3]++;
+            }
+        }
+
+        List<String> outputList = new ArrayList<>();
+        outputList.add(0, occurences[0]+ " x nichts gewusst");
+        outputList.add(1, occurences[1]+ " x nur Modell bekannt");
+        outputList.add(2, occurences[2]+ " x nur Mikroskopbild bekannt");
+        outputList.add(3, occurences[3]+ " x alles gewusst!");
 
 
-        ArrayAdapter<SurveyObject> surveyObjectArrayAdapter = new ArrayAdapter<> (
+
+        ArrayAdapter<String> surveyObjectArrayAdapter = new ArrayAdapter<> (
                 this,
                 android.R.layout.simple_list_item_1,
-                surveyObjectList);
+                outputList);
 
         ListView surveyObjectListView = (ListView) findViewById(R.id.listview_survey_objects);
         surveyObjectListView.setAdapter(surveyObjectArrayAdapter);
