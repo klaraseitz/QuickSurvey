@@ -1,0 +1,15 @@
+<resources>
+    <string name="app_name">QuickSurvey</string>
+
+    <string name="hello_world">Hello world!</string>
+    <string name="action_settings">Empty database</string>
+
+    <string name="editText_hint_quantity">Wolle</string>
+    <string name="editText_hint_product">Treppe</string>
+    <string name="button_add_product">+</string>
+    <string name="wolleCheckbox">Wolle</string>
+    <string name="treppeCheckbox">Treppe</string>
+
+    <string name="editText_errorMessage">Das Feld darf nicht leer sein.</string>
+    <string name="newEntryButton">Mehr Daten sammeln!!</string>
+</resources>
