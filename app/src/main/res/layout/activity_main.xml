@@ -12,39 +12,20 @@
     tools:context=".MainActivity"
     android:weightSum="1">
 
- <!--   <LinearLayout
-        android:orientation="horizontal"
-        android:layout_width="fill_parent"
-        android:layout_height="wrap_content"
-        android:focusableInTouchMode="true">
-
-        <CheckBox
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="@string/wolleCheckbox"
-            android:id="@+id/checkBox_wolle"
-            android:layout_weight="1" />
-
-        <CheckBox
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="@string/treppeCheckbox"
-            android:id="@+id/checkBox_treppe"
-            android:layout_weight="1" />
-
-        <Button
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="@string/button_add_product"
-            android:id="@+id/button_add_product" />
-    </LinearLayout>-->
-
     <ListView
         android:layout_width="match_parent"
         android:layout_height="312dp"
         android:id="@+id/listview_survey_objects"
         android:layout_gravity="center_horizontal"
         android:layout_weight="0.92" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceLarge"
+        android:text="@string/main_textView"
+        android:id="@+id/textView"
+        android:layout_gravity="center_horizontal" />
 
     <LinearLayout
         android:orientation="vertical"

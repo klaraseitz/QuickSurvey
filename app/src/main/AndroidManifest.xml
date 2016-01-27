@@ -20,7 +20,7 @@ package="com.quicksurvey.klara.quicksurvey">
         </activity>
         <activity
             android:name=".QuestionActivity"
-            android:label="@string/app_name" >
+            android:label="Was ist das?" >
         </activity>
 
     </application>

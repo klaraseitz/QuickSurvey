@@ -9,6 +9,7 @@ import android.view.MenuItem;
 import android.view.View;
 import android.widget.ArrayAdapter;
 import android.widget.ListView;
+import android.widget.TextView;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -53,7 +54,7 @@ public class MainActivity extends AppCompatActivity {
         List<String> outputList = new ArrayList<>();
         outputList.add(0, occurences[0]+ " x nichts gewusst");
         outputList.add(1, occurences[1]+ " x nur Modell bekannt");
-        outputList.add(2, occurences[2]+ " x nur Mikroskopbild bekannt");
+        outputList.add(2, occurences[2]+ " x nur echter Strang bekannt");
         outputList.add(3, occurences[3]+ " x alles gewusst!");
 
 
@@ -65,6 +66,16 @@ public class MainActivity extends AppCompatActivity {
 
         ListView surveyObjectListView = (ListView) findViewById(R.id.listview_survey_objects);
         surveyObjectListView.setAdapter(surveyObjectArrayAdapter);
+
+        int numberOfPplAsked = occurences[0]+occurences[1]+occurences[2]+occurences[3];
+        TextView howManyPplText = (TextView) findViewById(R.id.textView);
+        String text;
+        if (numberOfPplAsked != 1) {
+            text = "Bisher " + numberOfPplAsked + " Personen befragt!";
+        }else{
+            text = "Bisher eine Person befragt!";
+        }
+        howManyPplText.setText(text);
     }
 
     @Override

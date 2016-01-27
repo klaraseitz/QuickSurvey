@@ -2,7 +2,8 @@
     <string name="app_name">QuickSurvey</string>
 
     <string name="hello_world">Hello world!</string>
-    <string name="action_deleteAll">Empty database</string>
-    <string name="action_deleteOne">Delete Last Element</string>
+    <string name="action_deleteAll">Datenbank leeren</string>
+    <string name="action_deleteOne">Letztes Element löschen</string>
     <string name="newEntryButton">Mehr Daten sammeln!!</string>
+    <string name="main_textView">Bisher 0 Personen befragt!</string>
 </resources>
