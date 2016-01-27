@@ -54,7 +54,7 @@ public class QuestionActivity extends AppCompatActivity {
         }
         else{
         // switch to MainActivity
-        dataSource.createSurveyObject(knowledge[0], knowledge[1]);
+        dataSource.createSurveyObject(knowledge[1], knowledge[0]);
         Intent intent = new Intent(this, MainActivity.class);
         startActivity(intent);
         }
@@ -67,7 +67,7 @@ public class QuestionActivity extends AppCompatActivity {
             setImage();
         } else {
             // switch to MainActivity
-            dataSource.createSurveyObject(knowledge[0], knowledge[1]);
+            dataSource.createSurveyObject(knowledge[1],knowledge[0]);
             Intent intent = new Intent(this, MainActivity.class);
             startActivity(intent);
         }

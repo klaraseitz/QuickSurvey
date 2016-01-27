@@ -3,6 +3,7 @@ package com.quicksurvey.klara.quicksurvey;
 import android.content.ContentValues;
 import android.content.Context;
 import android.database.Cursor;
+import android.database.DatabaseUtils;
 import android.database.sqlite.SQLiteDatabase;
 import android.util.Log;
 
@@ -40,10 +41,18 @@ public class SurveyObjectDataSource {
     }
 
     public void reset() {
-        //close();
-        database.delete(SurveyObjectDbHelper.TABLE_SURVEY_LIST,
+        database.delete(dbHelper.TABLE_SURVEY_LIST,
                 "1 = 1",
                 null);
+    }
+
+    public void deleteLast() {
+        String SQL_DELETELAST =
+                "DELETE FROM " + dbHelper.TABLE_SURVEY_LIST +
+                " WHERE " + dbHelper.COLUMN_ID + " = (SELECT MAX( " +
+                dbHelper.COLUMN_ID + " ) FROM " + dbHelper.TABLE_SURVEY_LIST  + " )";
+        database.execSQL(SQL_DELETELAST);
+
     }
 
     public SurveyObject createSurveyObject(int wolle, int treppe) {
@@ -73,9 +82,7 @@ public class SurveyObjectDataSource {
         int wolle = cursor.getInt(idWolle);
         long id = cursor.getLong(idIndex);
 
-        SurveyObject surveyObject = new SurveyObject(treppe, wolle, id);
-
-        return surveyObject;
+        return new SurveyObject(treppe, wolle, id);
     }
 
     public List<SurveyObject> getAllSurveyObjects() {

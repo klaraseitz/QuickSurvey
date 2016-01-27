@@ -3,16 +3,11 @@ package com.quicksurvey.klara.quicksurvey;
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
-import android.text.TextUtils;
 import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
-import android.view.inputmethod.InputMethodManager;
 import android.widget.ArrayAdapter;
-import android.widget.Button;
-import android.widget.CheckBox;
-import android.widget.EditText;
 import android.widget.ListView;
 
 import java.util.ArrayList;
@@ -106,8 +101,12 @@ public class MainActivity extends AppCompatActivity {
         int id = item.getItemId();
 
         //noinspection SimplifiableIfStatement
-        if (id == R.id.action_settings) {
+        if (id == R.id.action_deleteAll) {
             dataSource.reset();
+            showAllListEntries();
+            return true;
+        }else if (id == R.id.action_deleteOne) {
+            dataSource.deleteLast();
             showAllListEntries();
             return true;
         }

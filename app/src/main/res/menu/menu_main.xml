@@ -5,8 +5,13 @@
     tools:context=".MainActivity">
 
     <item
-        android:id="@+id/action_settings"
-        android:title="@string/action_settings"
+        android:id="@+id/action_deleteAll"
+        android:title="@string/action_deleteAll"
+        android:orderInCategory="100"
+        app:showAsAction="never" />
+    <item
+        android:id="@+id/action_deleteOne"
+        android:title="@string/action_deleteOne"
         android:orderInCategory="100"
         app:showAsAction="never" />
 </menu>
